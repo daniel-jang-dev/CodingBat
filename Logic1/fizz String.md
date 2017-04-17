@@ -1,0 +1,33 @@
+> Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b" return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all other cases, return the string unchanged. (See also: FizzBuzz Code)
+
+- fizzString("fig") → "Fizz"
+- fizzString("dib") → "Buzz"
+- fizzString("fib") → "FizzBuzz"
+
+      public String fizzString(String str) {
+        String answer = "";
+        int len = str.length();
+        char first = str.charAt(0);
+        char last = str.charAt(len-1);
+
+        if(first == 'f')
+        {
+          answer = "Fizz";
+          if(last == 'b' && first != last)
+          {
+            answer += "Buzz";
+          }
+        }
+        else
+        {
+          if(last == 'b')
+          {
+            answer = "Buzz";
+          }
+          else
+          {
+            answer = str;
+          }
+        }
+        return answer;
+      }
